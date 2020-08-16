@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for product in object_list %}
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{ product.photo.url }}" alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+            </div>
+            <div class="card-footer row justify-content-between">
+                <h4><a>Comprar</a></h4>
+                <h3>R$ {{ product.price }}</h3>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
